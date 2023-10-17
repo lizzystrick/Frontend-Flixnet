@@ -1,1 +1,106 @@
-<p>home works!</p>
+<header>
+    <nav class="navbar">
+      <a [routerLink]="['/catalog']" class="nav-logo">
+        <img src="/assets/images/logo.png" alt="Netflix Logo" />
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link active">Início</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link">Séries</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link">Filmes</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link">Bombando</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link">Minha lista</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="title">
+        <img src="/assets/images/title.png" alt="Netflix Logo" />
+      </div>
+  
+      <div class="info">
+        <div id="topToday">
+          <div id="top10">
+            <p>TOP</p>
+            <p>10</p>
+          </div>
+          <p>Brasil: Top 2 de hoje</p>
+        </div>
+  
+        <div id="description">
+          Um agente do FBI persegue o ladrão de arte mais procurado do mundo. Ele
+          só não esperava ter seu alvo como parceiro para prender uma bandida
+          muito esperta.
+        </div>
+  
+        <div class="btnOptions">
+          <button class="btn white">
+            <img src="assets/images/play.png" />
+            <span>Assistir</span>
+          </button>
+          <button class="btn gray">
+            <img src="assets/images/info.png" />
+            <span>Mais informações</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="wrapper">
+    <div>
+      <div class="category">
+        <h1>Populares na Netflix</h1>
+        <div class="carouselBox">
+          <app-card
+            *ngFor="let value of popular"
+            [text]="value"
+            (click)="showInfo(value)"
+          ></app-card>
+        </div>
+      </div>
+  
+      <div class="category">
+        <h1>Continuar assistindo como Usuário{{ " " + userId }}</h1>
+        <div class="carouselBox">
+          <app-card
+            *ngFor="let value of keepWatching"
+            [text]="value"
+            (click)="showInfo(value)"
+          ></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="cardInfo" *ngIf="show">
+    <app-card-info
+      [img]="this.serie['backgroundImage']"
+      [titleImg]="this.serie['titleImage']"
+      [relevance]="this.serie['relevance']"
+      [year]="this.serie['year']"
+      [minAge]="this.serie['minAge']"
+      [time]="this.serie['time']"
+      [description]="this.serie['description']"
+      [cast]="this.serie['cast']"
+      [genre]="this.serie['genre']"
+      [scenes]="this.serie['scenes']"
+    ></app-card-info>
+    <div class="close" (click)="close()">X</div>
+  </div>
+  
+  <div class="background" *ngIf="show" (click)="close()"></div>
+  
