@@ -1,0 +1,7 @@
+<!-- <div class="row">
+  <input type="search" class="form-control" placeholder="search" [formControl]="searchField">
+  <span class="search-title">{{ (results | async)?.length ? 'Results' : 'Search' }}</span>
+</div> -->
+<div class="movie-container">
+  <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
+</div>

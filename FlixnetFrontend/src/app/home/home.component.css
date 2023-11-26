@@ -288,7 +288,7 @@ header {
     position: absolute;
     left: 0px;
     top: 0px;
-    overflow-y: hidden;
+    overflow: visible
   }
   
   @media screen and (max-width: 750px) {

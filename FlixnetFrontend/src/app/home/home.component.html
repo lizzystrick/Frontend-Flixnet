@@ -5,19 +5,19 @@
         </a>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a [routerLink]="['/catalog']" class="nav-link active">Início</a>
+            <a [routerLink]="['/catalog']" class="nav-link active">Home</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/catalog']" class="nav-link">Séries</a>
+            <a [routerLink]="['/catalog']" class="nav-link">Series</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/catalog']" class="nav-link">Filmes</a>
+            <a [routerLink]="['/movie']" class="nav-link">Films</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/catalog']" class="nav-link">Bombando</a>
+            <a [routerLink]="['/catalog']" class="nav-link">Nieuw en populair</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/catalog']" class="nav-link">Minha lista</a>
+            <a [routerLink]="['/catalog']" class="nav-link">Mijn lijst</a>
           </li>
         </ul>
         <div class="hamburger">
@@ -58,40 +58,5 @@
     </div>
   </header>
   
-  <div class="wrapper">
-    <div>
-      <div class="category">
-        <h1>Populair</h1>
-        <div class="carouselBox">
-        </div>
-      </div>
-  
-      <div class="category">
-        <h1>Verderkijken</h1>
-        <div class="carouselBox">
-          <app-card
-            *ngFor="let value of keepWatching"
-            [text]="value"
-          ></app-card>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="cardInfo" *ngIf="show">
-    <app-card-info
-      [relevance]=""
-      [year]="2023"
-      [minAge]="16"
-      [time]=""
-      [description]="this.serie['description']"
-      [cast]=""
-      [genre]=""
-      [scenes]=""
-    >
-</app-card-info>
-    <div class="close">X</div>
-  </div>
-  
-  <div class="background" ></div>
+
   
