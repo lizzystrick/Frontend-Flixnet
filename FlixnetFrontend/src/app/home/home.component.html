@@ -57,6 +57,11 @@
       </div>
     </div>
   </header>
+  <div class="wrapper">
+  <div class="movie-container">
+    <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
+  </div>
+  </div>
   
 
   

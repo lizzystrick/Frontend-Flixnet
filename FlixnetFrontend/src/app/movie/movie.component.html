@@ -5,3 +5,4 @@
 <div class="movie-container">
   <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
 </div>
+<button (click)="saveMoviesToBackend()">Save Movies</button>

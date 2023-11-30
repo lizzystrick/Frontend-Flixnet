@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../service/movie.service';
 
 
 interface Cards {
@@ -25,14 +26,17 @@ interface Series {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  
+export class HomeComponent implements OnInit{
+  movies: any[] = [];
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
+  ngOnInit(): void {
+    this.movieService.getMovies().subscribe((data: any) => {
+      this.movies = data.results;
+    });
+  }
 
 
-ngOnInit(): void {
-}
 
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -11,21 +11,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
 import { CardInfoComponent } from './card-info/card-info.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    RegistrationComponent,
     MovieComponent,
     NavbarComponent,
     CardComponent,
-    CardInfoComponent
+    CardInfoComponent,
+    CreateUserComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     CommonModule
   ],

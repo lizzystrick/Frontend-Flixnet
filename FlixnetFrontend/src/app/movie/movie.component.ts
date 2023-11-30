@@ -21,10 +21,34 @@ import { query } from '@angular/animations';
   
     constructor(private movieService: MovieService) {}
     ngOnInit(): void {
+      this.loadMovies();
+    }
+
+    loadMovies(){
       this.movieService.getMovies().subscribe((data: any) => {
         this.movies = data.results;
+    });
+  }
+      
+    saveMoviesToBackend(){
+      const moviesToSave: Movie[] = this.movies.map((movie: any) => {
+        // Map your movie data to your Movie model
+        // Adjust this based on the actual structure of your Movie model
+        return {
+          genre_ids: movie.genre_ids,
+          // Add other properties you want to save
+        } as Movie;
       });
-    }
+    
+    
+    this.movieService.postMovie(moviesToSave).subscribe(
+      (result) => {
+        console.log('Movies saved successfully', result);
+      },
+      (error) => {
+        console.error('Error saving movies', error);
+      }
+    );
     // ngOnInit() {
     //   this.searchField = new FormControl();
 
@@ -44,4 +68,4 @@ import { query } from '@angular/animations';
     
   }
 
-  
+  }

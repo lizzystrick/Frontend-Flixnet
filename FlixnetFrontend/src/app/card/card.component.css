@@ -2,6 +2,7 @@
   position: relative;
   width: 200px;
   margin: 20px;
+  float: left;
   cursor: pointer;
   overflow: hidden;
 }
