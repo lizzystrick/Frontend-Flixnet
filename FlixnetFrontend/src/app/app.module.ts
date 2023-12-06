@@ -13,6 +13,8 @@ import { CardComponent } from './card/card.component';
 import { CardInfoComponent } from './card-info/card-info.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { LoginBgComponent } from './login-bg/login-bg.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RegistrationComponent } from './registration/registration.component';
     NavbarComponent,
     CardComponent,
     CardInfoComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    LoginComponent,
+    LoginBgComponent
 
   ],
   imports: [
