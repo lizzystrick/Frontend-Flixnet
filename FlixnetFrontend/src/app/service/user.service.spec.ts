@@ -42,6 +42,23 @@ describe('UserService', () => {
     req.flush(responseUser);
   });
 
+  it('should retrieve all users', () => {
+    const mockUsers = [{ id: Guid.create(), username: 'lizzy', email: 'lizzy@example.com', password: 'hoi123' },
+    { id: Guid.create(), username: 'sacha', email: 'sacha@example.com', password: 'hoi123' },
+    { id: Guid.create(), username: 'bart', email: 'bart@example.com', password: 'hoi123' },
+    { id: Guid.create(), username: 'mae', email: 'mae@example.com', password: 'hoi123' }];
+
+    service.getUsers().subscribe(users => {
+      console.log(users);
+      expect(users.length).toBeGreaterThan(0);
+      expect(users).toEqual(mockUsers);
+    });
+
+    const req = httpController.expectOne('https://localhost:7294/user/');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockUsers);
+  });
+
   afterEach(() => {
     httpController.verify(); // Ensure that there are no outstanding requests
   });
