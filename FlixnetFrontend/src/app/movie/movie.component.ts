@@ -4,6 +4,7 @@ import { map, switchMap, debounceTime, distinctUntilChanged, tap } from 'rxjs/op
 import {Observable} from 'rxjs';
 import { MovieService } from "../../app/service/movie.service";
 import { Movie } from '../model/movie';
+import { ToastrService } from 'ngx-toastr';
 import { query } from '@angular/animations';
 
 @Component({
@@ -19,9 +20,10 @@ import { query } from '@angular/animations';
     // searchControl: FormControl = new FormControl();
     // movies$!: Observable<any[]>;
   
-    constructor(private movieService: MovieService) {}
+    constructor(private movieService: MovieService, private toastr: ToastrService) {}
     ngOnInit(): void {
       this.loadMovies();
+      
     }
 
     loadMovies(){

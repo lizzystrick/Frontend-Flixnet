@@ -3,5 +3,6 @@
   <div class="movie-info">
     <h3>{{ movie.title }}</h3>
     <p>{{ movie.overview }}</p>
+    <button (click)="likeMovie(movie.id.toString())">Like</button>
   </div>
 </div>

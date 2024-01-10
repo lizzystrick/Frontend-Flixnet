@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, map, throwError} from "rxjs";
 import {User} from "../model/user/user";
 import {Guid} from "guid-typescript";
 import {Createmodel} from "../model/user/createmodel";
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,16 @@ private apiURL = 'https://localhost:7294/User/';
     headers: new HttpHeaders().set('Content-Type', 'application/json')
   }
   constructor(private http: HttpClient) {}
+
+  getUsernameById(userId: string): Observable<string> {
+    return this.http.get<{ username: string }>(`${this.apiURL}/${userId}`, this.httpOptions)
+    .pipe(
+      map(response  => response.username),
+      catchError(error => {
+        console.error('Error fetching username:', error);
+        return throwError(error); // Handle error and rethrow
+      }));
+  }
 
   getUserByID(userID: Guid) : Observable<User>{
     return this.http.get<User>('https://localhost:7294/user/'+userID.toString(), this.httpOptions)
