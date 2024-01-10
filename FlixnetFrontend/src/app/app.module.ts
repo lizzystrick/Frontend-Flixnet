@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from '../app/movie/movie.component';
+import { LikedMoviesComponent } from './liked-movies/liked-movies.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
@@ -25,6 +26,7 @@ import { LoginBgComponent } from './login-bg/login-bg.component';
     HomeComponent,
     RegistrationComponent,
     MovieComponent,
+    LikedMoviesComponent,
     NavbarComponent,
     CardComponent,
     CardInfoComponent,

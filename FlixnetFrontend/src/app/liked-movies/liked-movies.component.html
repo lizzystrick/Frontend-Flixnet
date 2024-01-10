@@ -1,0 +1,11 @@
+<div *ngIf="likedMovies.length > 0; else noMovies">
+    <div *ngFor="let movie of likedMovies">
+      <!-- Display each movie's information here -->
+      <h3>{{ movie.title }}</h3>
+    <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+  
+  <ng-template #noMovies>
+    <p>No movies liked yet.</p>
+  </ng-template>

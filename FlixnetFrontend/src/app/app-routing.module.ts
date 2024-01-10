@@ -6,12 +6,14 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { LoginBgComponent } from './login-bg/login-bg.component';
 import { MovieComponent } from './movie/movie.component';
+import { LikedMoviesComponent } from './liked-movies/liked-movies.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
   { path: '', component: LoginBgComponent},
   {path: 'reg', component: RegistrationComponent},
+  { path: 'liked-movies', component: LikedMoviesComponent },
   { path: 'movie', component: MovieComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},

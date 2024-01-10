@@ -5,6 +5,7 @@
   float: left;
   cursor: pointer;
   overflow: hidden;
+  background-color: black;
 }
 
   img {

@@ -48,6 +48,13 @@ getMovies(): Observable<any> {
   );
 }
 
+getLikedMoviesByUser(userId: string): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/user/${userId}`, this.httpOptions);
+}
+getMovieById(movieId: number): Observable<any> {
+  const url = `${this.TmdbUrl}/movie/${movieId}?api_key=${this.apiKey}`;
+  return this.http.get(url);// Replace 'any' with your movie detail model if you have one
+}
 // Method to get a movie title by ID from the cache
 getMovieTitleById(movieId: string): string | undefined {
   return this.movieTitles.get(movieId);
