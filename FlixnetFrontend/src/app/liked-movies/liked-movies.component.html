@@ -1,11 +1,24 @@
-<div *ngIf="likedMovies.length > 0; else noMovies">
-    <div *ngFor="let movie of likedMovies">
-      <!-- Display each movie's information here -->
-      <h3>{{ movie.title }}</h3>
-    <p>{{ movie.overview }}</p>
+<!-- Container for the movie list -->
+<div *ngIf="likedMovies.length > 0; else noMovies" class="movies-container">
+
+    <!-- Iterating over each movie in likedMovies array -->
+    <div *ngFor="let movie of likedMovies" class="movie-card">
+  
+      <!-- Movie Image -->  
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}" class="movie-image">
+      <!-- Movie Title -->
+      <h3 class="movie-title">{{ movie.title }}</h3>
+  
+      <!-- Movie Overview -->
+      <ul class="movie-genres">
+        <li *ngFor="let genre of movie.genres">{{ genre.name }}</li>
+      </ul>
+  
     </div>
+  
   </div>
   
+  <!-- Template to display when there are no liked movies -->
   <ng-template #noMovies>
     <p>No movies liked yet.</p>
   </ng-template>

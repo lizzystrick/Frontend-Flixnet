@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieService } from '../service/movie.service';
 import { AuthenticationService } from '../service/authentication.service';
 
@@ -8,9 +8,13 @@ import { AuthenticationService } from '../service/authentication.service';
   styleUrls: ['./liked-movies.component.css']
 })
 export class LikedMoviesComponent implements OnInit {
+    @Input() movie: any;
   likedMovies: any[] = [];
-
   constructor(private movieservice: MovieService, private authService: AuthenticationService) {}
+  getMoviePosterUrl(): string {
+    // Assuming the poster_path is available in the movie data
+    return `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
+  }
 
   ngOnInit() {
     const userId = this.authService.getCurrentUserId(); // Replace with actual user ID from authentication

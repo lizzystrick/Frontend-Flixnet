@@ -1,0 +1,33 @@
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: black;
+    color: white;
+  }
+  
+  .movie-card {
+    position: relative;
+  width: 200px; /* Set the width you want for your images */
+  margin: 10px;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-title {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+  }
+  
+  .movie-overview {
+    font-size: 1em;
+    margin: 0 0.5em 1em 0.5em;
+  }

@@ -10,7 +10,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
+    
+    "inlineSourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -22,8 +23,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "types": ["cypress"],
   },
+  "include": [
+    "**/*.ts"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
