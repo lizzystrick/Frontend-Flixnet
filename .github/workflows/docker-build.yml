@@ -21,6 +21,9 @@ jobs:
       with:
         node-version: '18.13' # or the Node.js version your project uses
 
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
     - name: Install dependencies
       run: npm install
       working-directory: FlixnetFrontend
