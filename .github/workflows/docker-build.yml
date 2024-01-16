@@ -46,7 +46,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         file: ./FlixnetFrontend/Dockerfile
-        context: .
+        context: ./FlixnetFrontend/Dockerfile
         push: true
         tags: ghcr.io/lizzystrick/frontend-flixnet:latest # Replace with your path in GHCR
 
