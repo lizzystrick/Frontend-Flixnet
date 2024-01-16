@@ -24,10 +24,6 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
-    - name: Install Dependencies
-      working-directory: FlixnetFrontend
-      run: npm install
-
     - name: Build Angular Project
       run: ng build --prod
 
