@@ -41,8 +41,8 @@ private getUserId(): string | null {
   return this.authService.getCurrentUserId();
 }
 
-  toggleInfo(): void {
-    this.showInfo = !this.showInfo;
-  }
+  ///toggleInfo(): void {
+    //this.showInfo = !this.showInfo;
+  //}
 
 }

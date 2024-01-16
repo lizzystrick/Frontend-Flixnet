@@ -36,19 +36,11 @@
 //   }
 // }
 
-declare namespace Cypress {
-    interface Chainable {
-      /**
-       * Custom command to log in a user.
-       * @example cy.login('email@example.com', 'password')
-       */
-      login(email: string, password: string): Chainable<void>;
-    }
-  }
-  
+
+
 Cypress.Commands.add('login', (email, password) => {
-    cy.visit('/');
-    cy.get('input[name="username"]').type(email);
-    cy.get('input[name="password"]').type(password);
+    cy.visit('');
+    cy.get('input[name="Username"]').type(email);
+    cy.get('input[name="Password"]').type(password);
     cy.get('form').submit();
   });

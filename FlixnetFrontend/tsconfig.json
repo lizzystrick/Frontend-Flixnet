@@ -11,7 +11,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     
-    "inlineSourceMap": true,
+    "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -23,12 +23,9 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "types": ["cypress"],
+    ]
   },
-  "include": [
-    "**/*.ts"
-  ],
+  
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
