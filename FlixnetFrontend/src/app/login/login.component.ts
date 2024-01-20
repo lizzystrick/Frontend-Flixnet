@@ -42,10 +42,7 @@ export class LoginComponent {
         this.authService.login(loginData)
             .subscribe({
                 next: (response) => {
-                    console.log('Login response', response);
-                        // Assuming response contains userID and maybe a token
               localStorage.setItem('userID', response.id);
-              // If you have a token, you might want to store it as well
               localStorage.setItem('token', response.token);
                     console.log('User ID:', response.id);
                     this.router.navigate(['/home']);

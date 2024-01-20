@@ -1,7 +1,7 @@
-<!-- Container for the movie list -->
+
 <div *ngIf="likedMovies.length > 0; else noMovies" class="movies-container">
 
-    <!-- Iterating over each movie in likedMovies array -->
+
     <div *ngFor="let movie of likedMovies; let i = index" class="movie-card">
   
       <!-- Movie Image -->  
@@ -19,7 +19,6 @@
   
   </div>
   
-  <!-- Template to display when there are no liked movies -->
   <ng-template #noMovies>
     <p>No movies liked yet.</p>
   </ng-template>

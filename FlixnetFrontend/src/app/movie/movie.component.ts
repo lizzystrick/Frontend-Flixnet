@@ -14,11 +14,7 @@ import { query } from '@angular/animations';
   })
   export class MovieComponent implements OnInit{
     movies: any[] = [];
-    // public loading: boolean = false;
-    // public results: Observable<any>;
-    // public searchField: FormControl;
-    // searchControl: FormControl = new FormControl();
-    // movies$!: Observable<any[]>;
+
   
     constructor(private movieService: MovieService, private toastr: ToastrService) {}
     ngOnInit(): void {
@@ -34,11 +30,9 @@ import { query } from '@angular/animations';
       
     saveMoviesToBackend(){
       const moviesToSave: Movie[] = this.movies.map((movie: any) => {
-        // Map your movie data to your Movie model
-        // Adjust this based on the actual structure of your Movie model
         return {
           genre_ids: movie.genre_ids,
-          // Add other properties you want to save
+
         } as Movie;
       });
     
@@ -51,21 +45,7 @@ import { query } from '@angular/animations';
         console.error('Error saving movies', error);
       }
     );
-    // ngOnInit() {
-    //   this.searchField = new FormControl();
 
-    //   this.results = this.searchField.valueChanges
-    //   .pipe(
-    //     debounceTime(400),
-    //     distinctUntilChanged(),
-    //     tap(_ => {
-    //       this.loading = true;
-    //     }),
-    //       switchMap(term => this.movieService.search(term)),
-    //        tap(_ => (this.loading = false))
-    //   );
-    //   console.log('movie:', this.movieService.getMovies);
-    // }
 
     
   }

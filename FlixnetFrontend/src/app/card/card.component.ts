@@ -15,7 +15,7 @@ export class CardComponent  {
   constructor(private movieService: MovieService, private authService: AuthenticationService) {}
   
   getMoviePosterUrl(): string {
-    // Assuming the poster_path is available in the movie data
+
     return `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
   }
 
@@ -25,7 +25,7 @@ export class CardComponent  {
       this.movieService.likeMovie(userId, movieId).subscribe(
         () => {
         console.log(`Movie ${movieId} liked by user ${userId}`);
-        // Update UI to reflect the like
+
     },
     error => {
       console.log('error liking movie', error);
@@ -41,8 +41,5 @@ private getUserId(): string | null {
   return this.authService.getCurrentUserId();
 }
 
-  ///toggleInfo(): void {
-    //this.showInfo = !this.showInfo;
-  //}
 
 }

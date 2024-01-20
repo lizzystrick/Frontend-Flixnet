@@ -8,7 +8,7 @@
   
   .movie-card {
     position: relative;
-  width: 200px; /* Set the width you want for your images */
+  width: 200px; 
   margin: 10px;
     background-color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

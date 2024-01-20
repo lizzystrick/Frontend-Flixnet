@@ -8,7 +8,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA] // Add this to ignore unknown elements
+      schemas: [CUSTOM_ELEMENTS_SCHEMA] 
     }).compileComponents();
   }));
 

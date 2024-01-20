@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit{
     updateUser(): void {
         const userId = this.authService.getCurrentUserId();
         if (userId) {
-          // Construct the update model with the ID and form values
           let userToUpdate = new UpdateModel(userId, this.Username, this.Email);
           this.userService.updateUser(userToUpdate).subscribe(
             () => alert('User updated successfully'),

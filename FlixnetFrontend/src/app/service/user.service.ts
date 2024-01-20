@@ -23,7 +23,7 @@ private apiURL = 'https://localhost:7294/User/';
       map(response  => response.username),
       catchError(error => {
         console.error('Error fetching username:', error);
-        return throwError(error); // Handle error and rethrow
+        return throwError(error); 
       }));
   }
 

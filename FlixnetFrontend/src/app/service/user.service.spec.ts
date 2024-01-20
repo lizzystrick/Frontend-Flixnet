@@ -60,6 +60,6 @@ describe('UserService', () => {
   });
 
   afterEach(() => {
-    httpController.verify(); // Ensure that there are no outstanding requests
+    httpController.verify(); 
   });
 });

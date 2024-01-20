@@ -14,7 +14,6 @@ import { LikedMoviesComponent } from './liked-movies/liked-movies.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
-import { CardInfoComponent } from './card-info/card-info.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
@@ -30,7 +29,6 @@ import { ProfileComponent } from './profile/profile.component';
     LikedMoviesComponent,
     NavbarComponent,
     CardComponent,
-    CardInfoComponent,
     CreateUserComponent,
     LoginComponent,
     LoginBgComponent,

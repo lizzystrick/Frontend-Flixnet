@@ -15,7 +15,6 @@ describe('MovieService', () => {
     httpController = TestBed.inject(HttpTestingController);
   });
 
-  // afterEach to ensure that there are no outstanding http calls
   afterEach(() => {
     httpController.verify();
   });

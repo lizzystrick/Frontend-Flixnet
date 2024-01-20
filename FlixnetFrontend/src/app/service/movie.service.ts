@@ -5,13 +5,6 @@ import { Movie } from "../model/movie";
 import {Guid} from "guid-typescript";
 const headers = new HttpHeaders().set('Content-Type', 'application/X-www-form-urlencoded');
 
-
-// export type ApiResponse = {
-//   Response: string;
-//   Search: Movie[];
-//   totalResults: string;
-// };
-
 @Injectable({
   providedIn: 'root'
 })
@@ -45,7 +38,7 @@ getMovies(): Observable<any> {
     map(response => {
 
       response.results.forEach((movie: any) => {
-        this.movieTitles.set(movie.id.toString(), movie.title); // Cache the movie title
+        this.movieTitles.set(movie.id.toString(), movie.title); 
       });
       return response.results;
     })
@@ -57,16 +50,13 @@ getLikedMoviesByUser(userId: string): Observable<any[]> {
 }
 getMovieById(movieId: number): Observable<any> {
   const url = `${this.TmdbUrl}/movie/${movieId}?api_key=${this.apiKey}`;
-  return this.http.get(url);// Replace 'any' with your movie detail model if you have one
+  return this.http.get(url);
 }
-// Method to get a movie title by ID from the cache
+
 getMovieTitleById(movieId: string): string | undefined {
   return this.movieTitles.get(movieId);
 }
-  //getMovies() {
-    //const url = `${this.TmdbUrl}/movie/popular?api_key=${this.apiKey}`;
-    //return this.http.get(url);
-  //}
+
 
   postMovie(movies: Movie[]): Observable<Movie[]>{
     console.log(movies)
@@ -82,9 +72,6 @@ getMovieTitleById(movieId: string): string | undefined {
     const data = localStorage.getItem(this.lastFetchedMoviesKey);
     return data ? JSON.parse(data) : [];
   }
-  //saveMovies(movieModel: Movie) : Observable<Movie>{
-    //return this.http.post<Movie>(`${this.TmdbUrl} /movie/popular?api_key=${this.apiKey}`, JSON.stringify(movieModel), this.httpOptions)
-  //}
 
 
 

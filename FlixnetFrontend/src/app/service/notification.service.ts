@@ -10,7 +10,7 @@ export class NotificationService {
 
   startConnection(): void {
     this.hubConnection = new HubConnectionBuilder()
-        .withUrl('https://localhost:7294/NotificationHub') // Update with the backend URL
+        .withUrl('https://localhost:7294/NotificationHub') 
         .build();
 
     this.hubConnection
