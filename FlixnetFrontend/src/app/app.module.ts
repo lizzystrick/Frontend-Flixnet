@@ -19,6 +19,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { LoginBgComponent } from './login-bg/login-bg.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginBgComponent } from './login-bg/login-bg.component';
     CardInfoComponent,
     CreateUserComponent,
     LoginComponent,
-    LoginBgComponent
+    LoginBgComponent,
+    ProfileComponent
 
   ],
   imports: [

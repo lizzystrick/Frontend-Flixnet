@@ -2,7 +2,7 @@
 <div *ngIf="likedMovies.length > 0; else noMovies" class="movies-container">
 
     <!-- Iterating over each movie in likedMovies array -->
-    <div *ngFor="let movie of likedMovies" class="movie-card">
+    <div *ngFor="let movie of likedMovies; let i = index" class="movie-card">
   
       <!-- Movie Image -->  
       <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}" class="movie-image">
@@ -13,6 +13,7 @@
       <ul class="movie-genres">
         <li *ngFor="let genre of movie.genres">{{ genre.name }}</li>
       </ul>
+      <button (click)="deleteMovie(movie.id, i)">Delete</button>
   
     </div>
   

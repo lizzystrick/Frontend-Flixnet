@@ -5,6 +5,7 @@ import {User} from "../model/user/user";
 import {Guid} from "guid-typescript";
 import {Createmodel} from "../model/user/createmodel";
 import { catchError } from 'rxjs';
+import { UpdateModel } from '../model/user/updatemodel';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,9 @@ private apiURL = 'https://localhost:7294/User/';
   postUser(createUser: Createmodel) : Observable<User>{
     console.log(createUser)
     return this.http.post<User>(this.apiURL, JSON.stringify(createUser), this.httpOptions)
+  }
+
+  updateUser(user: UpdateModel): Observable<any> {
+    return this.http.put(`${this.apiURL}${user.ID}`, user, this.httpOptions);
   }
 }

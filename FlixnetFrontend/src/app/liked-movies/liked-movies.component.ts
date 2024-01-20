@@ -42,4 +42,23 @@ export class LikedMoviesComponent implements OnInit {
               console.error('User ID not found in local storage');
             }
           }
+
+          deleteMovie(movieId: number, index: number): void {
+            const userId = this.authService.getCurrentUserId(); // Replace with actual user ID from authentication
+            if (userId) {
+              this.movieservice.deleteLikedMovie(userId, movieId).subscribe(
+                () => {
+                  this.likedMovies.splice(index, 1); // Remove the movie from the list on successful deletion
+                  // You might want to show a success message to the user
+                },
+                (error) => {
+                  console.error('Error deleting the movie', error);
+                  // You might want to show an error message to the user
+                }
+              );
+            } else {
+              console.error('User ID is not available.');
+              // You might want to show an error message to the user
+            }
+          }
   }

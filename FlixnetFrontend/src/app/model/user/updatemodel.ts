@@ -1,15 +1,15 @@
 import { Guid } from 'guid-typescript';
 
-export class Createmodel {
+export class UpdateModel {
+    public ID: string
   public UserName: string;
   public Email: string;
-  public Password: string;
 
 
-  constructor(UserName: string, Email: string, Password: string) {
+  constructor(ID: string, UserName: string, Email: string) {
+    this.ID = ID;
     this.UserName = UserName;
     this.Email = Email;
-    this.Password = Password;
   }
 
   

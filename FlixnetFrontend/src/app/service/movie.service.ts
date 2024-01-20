@@ -35,6 +35,10 @@ httpOptions = {
     return this.http.post(`${this.apiUrl}/like`, data, this.httpOptions);
 }
 
+deleteLikedMovie(userId: string, movieId: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/${userId}/likes/${movieId}`);
+}
+
 getMovies(): Observable<any> {
   const url = `${this.TmdbUrl}/movie/popular?api_key=${this.apiKey}`;
   return this.http.get<{ results: any[] }>(url).pipe(
